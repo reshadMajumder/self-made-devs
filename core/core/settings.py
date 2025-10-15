@@ -145,7 +145,7 @@ REST_FRAMEWORK = {
 
 
 
-# CORS_ALLOWED_ORIGINS = [
-#     "*",
+CORS_ALLOWED_ORIGINS = [
+    "localhost:3000",
 
-# ]
+]
