@@ -10,13 +10,12 @@ export function Hero() {
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-balance">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
-              Self Made Devs
+              SelfMade Dev
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-white drop-shadow-lg text-balance max-w-2xl mx-auto">
-            Transform from student to developer in 4 months. Build your first production-ready project with industry
-            mentors.
+          Build yourself, By yourself
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
