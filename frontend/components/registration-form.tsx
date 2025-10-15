@@ -184,7 +184,7 @@ export function RegistrationForm() {
               <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
                 1
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Personal Information</h3>
+              <h3 className="text-xl font-bold text-white">Personal Information</h3>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -195,7 +195,7 @@ export function RegistrationForm() {
                 <Input
                   id="fullName"
                   name="fullName"
-                  placeholder="John Doe"
+                  placeholder="reshad xxxx"
                   required
                   value={formData.fullName}
                   onChange={handleInputChange}
@@ -211,7 +211,7 @@ export function RegistrationForm() {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder="reshad22205341197@diu.edu.bd"
                   required
                   value={formData.email}
                   onChange={handleInputChange}
@@ -228,7 +228,7 @@ export function RegistrationForm() {
                 <Input
                   id="studentId"
                   name="studentId"
-                  placeholder="STU123456"
+                  placeholder="02422220005341197"
                   required
                   value={formData.studentId}
                   onChange={handleInputChange}
@@ -238,13 +238,13 @@ export function RegistrationForm() {
 
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-slate-200 font-medium">
-                  Phone Number
+                  Phone Number(whatsapp)
                 </Label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+8801627*****"
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="h-11 bg-slate-800/60 border-slate-700 placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
@@ -285,12 +285,12 @@ export function RegistrationForm() {
 
               <div className="space-y-2">
                 <Label htmlFor="currentYear" className="text-slate-200 font-medium">
-                  Current Year
+                  Batch
                 </Label>
                 <Input
                   id="currentYear"
                   name="currentYear"
-                  placeholder="e.g., 2nd Year, Final Year"
+                  placeholder="39th"
                   value={formData.currentYear}
                   onChange={handleInputChange}
                   className="h-11 bg-slate-800/60 border-slate-700 placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
@@ -305,7 +305,7 @@ export function RegistrationForm() {
               <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
                 2
               </div>
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-white">
                 Areas of Interest <span className="text-red-500">*</span>
               </h3>
             </div>
@@ -369,7 +369,7 @@ export function RegistrationForm() {
               <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
                 3
               </div>
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-white">
                 Current Skills <span className="text-red-500">*</span>
               </h3>
             </div>
@@ -435,7 +435,7 @@ export function RegistrationForm() {
               <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
                 4
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Social Profiles</h3>
+              <h3 className="text-xl font-bold text-white">Social Profiles</h3>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -456,13 +456,13 @@ export function RegistrationForm() {
 
               <div className="space-y-2">
                 <Label htmlFor="linkedinUrl" className="text-slate-200 font-medium">
-                  LinkedIn Profile
+                  Facebook Profile
                 </Label>
                 <Input
                   id="linkedinUrl"
                   name="linkedinUrl"
                   type="url"
-                  placeholder="https://linkedin.com/in/username"
+                  placeholder="https://facebook.com/username"
                   value={formData.linkedinUrl}
                   onChange={handleInputChange}
                   className="h-11 bg-slate-800/60 border-slate-700 placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
