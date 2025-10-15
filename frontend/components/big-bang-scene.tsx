@@ -9,7 +9,7 @@ function BigBangParticles() {
   const particlesRef = useRef<THREE.Points>(null)
   const [explosionPhase, setExplosionPhase] = useState(0)
 
-  const particleCount = 100
+  const particleCount = 200
   const codeSymbols = ["</>", "{}", "[]", "()", "=>", "fn", "if", "&&", "||", "=="]
 
   const particles = useMemo(() => {
@@ -159,7 +159,7 @@ function EnergyCore() {
     coreRef.current.scale.set(scale, scale, scale)
 
     // Rotation (slower)
-    coreRef.current.rotation.x = time * 0.2
+    coreRef.current.rotation.x = time * 0.1
     coreRef.current.rotation.y = time * 0.3
   })
 
