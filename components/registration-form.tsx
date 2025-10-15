@@ -263,6 +263,10 @@ export function RegistrationForm() {
                     <SelectItem value="6">6th Semester</SelectItem>
                     <SelectItem value="7">7th Semester</SelectItem>
                     <SelectItem value="8">8th Semester</SelectItem>
+                    <SelectItem value="8">9th Semester</SelectItem>
+                    <SelectItem value="8">10th Semester</SelectItem>
+                    <SelectItem value="8">11h Semester</SelectItem>
+                    <SelectItem value="8">12th Semester</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>

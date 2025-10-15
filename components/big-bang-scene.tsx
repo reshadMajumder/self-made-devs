@@ -1,7 +1,7 @@
 "use client"
 
 import { useFrame } from "@react-three/fiber"
-import { Text3D, Environment } from "@react-three/drei"
+import { Text, Html } from "@react-three/drei"
 import { useRef, useMemo, useState } from "react"
 import * as THREE from "three"
 
@@ -9,7 +9,7 @@ function BigBangParticles() {
   const particlesRef = useRef<THREE.Points>(null)
   const [explosionPhase, setExplosionPhase] = useState(0)
 
-  const particleCount = 200
+  const particleCount = 100
   const codeSymbols = ["</>", "{}", "[]", "()", "=>", "fn", "if", "&&", "||", "=="]
 
   const particles = useMemo(() => {
@@ -27,7 +27,7 @@ function BigBangParticles() {
       // Random explosion velocities in all directions
       const theta = Math.random() * Math.PI * 2
       const phi = Math.random() * Math.PI
-      const speed = 0.5 + Math.random() * 1.5
+      const speed = 1 + Math.random() * 2
 
       velocities[i * 3] = Math.sin(phi) * Math.cos(theta) * speed
       velocities[i * 3 + 1] = Math.sin(phi) * Math.sin(theta) * speed
@@ -49,7 +49,7 @@ function BigBangParticles() {
         colors[i * 3 + 2] = 0.71
       }
 
-      sizes[i] = 0.1 + Math.random() * 0.2
+      sizes[i] = 0.1 + Math.random() * 0.1
     }
 
     return { positions, velocities, colors, sizes }
@@ -70,13 +70,13 @@ function BigBangParticles() {
 
       if (currentPhase < 1) {
         // Explosion phase - rapid expansion
-        positions[i3] += particles.velocities[i3] * 0.1
-        positions[i3 + 1] += particles.velocities[i3 + 1] * 0.1
-        positions[i3 + 2] += particles.velocities[i3 + 2] * 0.1
+        positions[i3] += particles.velocities[i3] * 0.18
+        positions[i3 + 1] += particles.velocities[i3 + 1] * 0.18
+        positions[i3 + 2] += particles.velocities[i3 + 2] * 0.18
       } else {
         // Floating phase - gentle movement
-        positions[i3 + 1] += Math.sin(time + i) * 0.001
-        positions[i3] += Math.cos(time * 0.5 + i) * 0.001
+        positions[i3 + 1] += Math.sin(time + i) * 0.0003
+        positions[i3] += Math.cos(time * 0.5 + i) * 0.0003
       }
 
       // Keep particles in bounds
@@ -87,16 +87,16 @@ function BigBangParticles() {
 
     particlesRef.current.geometry.attributes.position.needsUpdate = true
 
-    // Rotate the entire particle system slowly
-    particlesRef.current.rotation.y = time * 0.05
+    // Rotate the entire particle system more slowly
+    particlesRef.current.rotation.y = time * 0.01
   })
 
   return (
     <points ref={particlesRef}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={particleCount} array={particles.positions} itemSize={3} />
-        <bufferAttribute attach="attributes-color" count={particleCount} array={particles.colors} itemSize={3} />
-        <bufferAttribute attach="attributes-size" count={particleCount} array={particles.sizes} itemSize={1} />
+        <bufferAttribute attach="attributes-position" args={[particles.positions, 3]} />
+        <bufferAttribute attach="attributes-color" args={[particles.colors, 3]} />
+        <bufferAttribute attach="attributes-size" args={[particles.sizes, 1]} />
       </bufferGeometry>
       <pointsMaterial
         size={0.15}
@@ -130,22 +130,17 @@ function FloatingCodeSymbols() {
     <group ref={groupRef}>
       {symbols.map((symbol, index) => (
         <group key={index} position={symbol.position}>
-          <Text3D
-            font="/fonts/Inter_Bold.json"
-            size={0.5}
-            height={0.1}
-            curveSegments={12}
+          <Text
+            fontSize={0.6}
             position={[Math.sin(index * 1.5) * 0.2, Math.cos(index * 1.5) * 0.2, 0]}
+            anchorX="center"
+            anchorY="middle"
+            color={symbol.color}
+            outlineWidth={0.01}
+            outlineColor="#000"
           >
             {symbol.text}
-            <meshStandardMaterial
-              color={symbol.color}
-              metalness={0.8}
-              roughness={0.2}
-              emissive={symbol.color}
-              emissiveIntensity={0.3}
-            />
-          </Text3D>
+          </Text>
         </group>
       ))}
     </group>
@@ -163,9 +158,9 @@ function EnergyCore() {
     const scale = 1 + Math.sin(time * 2) * 0.2
     coreRef.current.scale.set(scale, scale, scale)
 
-    // Rotation
-    coreRef.current.rotation.x = time * 0.5
-    coreRef.current.rotation.y = time * 0.7
+    // Rotation (slower)
+    coreRef.current.rotation.x = time * 0.2
+    coreRef.current.rotation.y = time * 0.3
   })
 
   return (
@@ -195,7 +190,7 @@ export function BigBangScene() {
       <BigBangParticles />
       <FloatingCodeSymbols />
 
-      <Environment preset="night" />
+      {/* Removed Environment to avoid external HDR fetch issues */}
     </>
   )
 }
