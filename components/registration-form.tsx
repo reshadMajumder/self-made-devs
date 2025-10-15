@@ -130,25 +130,36 @@ export function RegistrationForm() {
     }
 
     try {
-      const response = await fetch("/api/register", {
+      const payload = {
+        full_name: formData.fullName || undefined,
+        email: formData.email || undefined,
+        student_id: formData.studentId || undefined,
+        phone: formData.phone || null,
+        current_semester: formData.currentSemester || null,
+        current_year: formData.currentYear || null,
+        interests: selectedInterests.length ? selectedInterests.join(", ") : "",
+        skills: selectedSkills.length ? selectedSkills.join(", ") : "",
+        github_url: formData.githubUrl || null,
+        linkedin_url: formData.linkedinUrl || null,
+        why_join: formData.whyJoin || undefined,
+        project_idea: formData.projectIdea || null,
+      }
+
+      const response = await fetch("/api/registration/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          interests: selectedInterests,
-          skills: selectedSkills,
-        }),
+        body: JSON.stringify(payload),
+        credentials: "same-origin",
       })
 
-      const data = await response.json()
+      const data = await response.json().catch(() => ({}))
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to submit registration")
+        throw new Error((data && (data.error || data.message)) || "Failed to submit registration")
       }
 
-      // Success - redirect to success page
       router.push("/register/success")
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred")
@@ -263,10 +274,10 @@ export function RegistrationForm() {
                     <SelectItem value="6">6th Semester</SelectItem>
                     <SelectItem value="7">7th Semester</SelectItem>
                     <SelectItem value="8">8th Semester</SelectItem>
-                    <SelectItem value="8">9th Semester</SelectItem>
-                    <SelectItem value="8">10th Semester</SelectItem>
-                    <SelectItem value="8">11h Semester</SelectItem>
-                    <SelectItem value="8">12th Semester</SelectItem>
+                    <SelectItem value="9">9th Semester</SelectItem>
+                    <SelectItem value="10">10th Semester</SelectItem>
+                    <SelectItem value="11">11th Semester</SelectItem>
+                    <SelectItem value="12">12th Semester</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>

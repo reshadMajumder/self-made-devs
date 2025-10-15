@@ -29,21 +29,7 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Protect admin routes
-  if (request.nextUrl.pathname.startsWith("/admin") && !request.nextUrl.pathname.startsWith("/admin/login")) {
-    if (!user) {
-      const url = request.nextUrl.clone()
-      url.pathname = "/admin/login"
-      return NextResponse.redirect(url)
-    }
-  }
-
-  // Redirect to admin dashboard if already logged in
-  if (request.nextUrl.pathname === "/admin/login" && user) {
-    const url = request.nextUrl.clone()
-    url.pathname = "/admin/dashboard"
-    return NextResponse.redirect(url)
-  }
+  // Admin routes removed; no auth redirects needed here
 
   return supabaseResponse
 }
