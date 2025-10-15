@@ -3,17 +3,13 @@ import { NextResponse } from "next/server"
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const upstream = await fetch("https://self-made-three.vercel.app/api/registration/register/", {
+    const upstream = await fetch("https://self-made-devs-api.vercel.app/api/registration/register/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Pass-through the JSON body as-is
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     })
 
     const text = await upstream.text()
-    // Try to parse JSON; if it fails, return text
     try {
       const json = JSON.parse(text)
       return NextResponse.json(json, { status: upstream.status })
