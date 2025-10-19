@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',  # optional for frontend integration
 
     "registration",
+    "dev_wing"  # this is for development wing member reqruite
 ]
 
 MIDDLEWARE = [
@@ -157,6 +158,7 @@ REST_FRAMEWORK = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "localhost:3000",
+    "http://localhost:3000",
+    "https://dev-wing.vercel.app",
 
 ]
