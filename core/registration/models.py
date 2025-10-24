@@ -12,9 +12,9 @@ class Registration(models.Model):
     github_url = models.URLField(null=True, blank=True)
     linkedin_url = models.URLField(null=True, blank=True)
     why_join = models.TextField()
-    sec_membership=models.CharField(max_length=50, null=True, blank=True)
-    transaction_id=models.CharField(max_length=50, null=True, blank=True)
-    method=models.CharField(max_length=20, null=True, blank=True)
+    # sec_membership = models.CharField(max_length=100, null=True, blank=True)
+    # transaction_id=models.CharField(max_length=50, null=True, blank=True)
+    # method=models.CharField(max_length=20, null=True, blank=True)
     project_idea = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
