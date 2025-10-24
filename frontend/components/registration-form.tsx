@@ -615,7 +615,7 @@ export function RegistrationForm() {
                   <p className="text-sm text-red-300 font-medium">{error}</p>
                   {error.includes("email") && (
                     <p className="text-xs text-red-400 mt-1">
-                      Please use a different email address or contact support if you believe this is an error.
+                      Please use a different email address or contact support if you believe this is an error..
                     </p>
                   )}
                 </div>
