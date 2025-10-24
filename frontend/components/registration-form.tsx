@@ -180,10 +180,25 @@ export function RegistrationForm() {
       const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        throw new Error(
-          (data && (data.error || data.message)) ||
-            "Failed to submit registration"
-        );
+        // Handle specific error cases
+        if (data && typeof data === 'object') {
+          // Check for field-specific errors (like email already exists)git 
+          const fieldErrors = Object.keys(data).filter(key => Array.isArray(data[key]));
+          if (fieldErrors.length > 0) {
+            // Get the first field error message
+            const firstField = fieldErrors[0];
+            const errorMessage = data[firstField][0] || `${firstField} validation error`;
+            throw new Error(errorMessage);
+          }
+          
+          // Handle general error messages
+          if (data.error || data.message) {
+            throw new Error(data.error || data.message);
+          }
+        }
+        
+        // Fallback error message
+        throw new Error("Failed to submit registration");
       }
 
       router.push("/register/success");
@@ -592,7 +607,19 @@ export function RegistrationForm() {
 
           {error && (
             <div className="p-4 bg-red-950/40 border-2 border-red-900/60 rounded-lg">
-              <p className="text-sm text-red-300 font-medium">{error}</p>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-red-500 flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">!</span>
+                </div>
+                <div>
+                  <p className="text-sm text-red-300 font-medium">{error}</p>
+                  {error.includes("email") && (
+                    <p className="text-xs text-red-400 mt-1">
+                      Please use a different email address or contact support if you believe this is an error.
+                    </p>
+                  )}
+                </div>
+              </div>
             </div>
           )}
 
