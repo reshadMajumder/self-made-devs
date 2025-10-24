@@ -69,7 +69,7 @@ export default function Navigation() {
           })}
         </div>
 
-        <div className="flex flex-1 items-center justify-end gap-4">
+        <div className="hidden md:flex lg:flex flex-1 items-center justify-end gap-4 ">
           {/* <ThemeToggle /> */}
           <Button asChild>
             <Link

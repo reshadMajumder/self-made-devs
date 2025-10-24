@@ -9,6 +9,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
+          <h1>DIUSEC - Design & Development Wing Presents -</h1>
           <h1 className="text-5xl md:text-7xl font-bold text-balance">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
               Self Made Dev
