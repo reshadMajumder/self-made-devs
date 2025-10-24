@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { ThemeToggle } from "./theme-toggle";
+// import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   {
@@ -70,7 +70,7 @@ export default function Navigation() {
         </div>
 
         <div className="flex flex-1 items-center justify-end gap-4">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <Button asChild>
             <Link
               href="/register"
