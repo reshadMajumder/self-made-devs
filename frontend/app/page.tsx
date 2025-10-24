@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import { Hero } from "@/components/hero"
-import { ProgramDetails } from "@/components/program-details"
-import { Journey } from "@/components/journey"
-import { Benefits } from "@/components/benefits"
-import { CallToAction } from "@/components/call-to-action"
-import { Canvas } from "@react-three/fiber"
-import { Suspense } from "react"
-import { BigBangScene } from "@/components/big-bang-scene"
+import { Hero } from "@/components/hero";
+import { ProgramDetails } from "@/components/program-details";
+import IntroCard from "@/components/IntroCard";
+import { Journey } from "@/components/journey";
+import { Benefits } from "@/components/benefits";
+import { CallToAction } from "@/components/call-to-action";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { BigBangScene } from "@/components/big-bang-scene";
 
 export default function Home() {
   return (
@@ -22,11 +23,12 @@ export default function Home() {
 
       <main className="relative z-10">
         <Hero />
+        <IntroCard />
         <ProgramDetails />
         <Journey />
         <Benefits />
         <CallToAction />
       </main>
     </>
-  )
+  );
 }
