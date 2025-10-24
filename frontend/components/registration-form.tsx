@@ -72,6 +72,9 @@ export function RegistrationForm() {
     linkedinUrl: "",
     whyJoin: "",
     projectIdea: "",
+    secMembership: false,
+    transactionId: "",
+    method: "",
   });
 
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
@@ -166,6 +169,9 @@ export function RegistrationForm() {
         linkedin_url: formData.linkedinUrl || null,
         why_join: formData.whyJoin || undefined,
         project_idea: formData.projectIdea || null,
+        sec_membership: typeof formData.secMembership === 'string' ? formData.secMembership : null,
+        transaction_id: formData.transactionId || null,
+        method: formData.method || null,
       };
 
       const response = await fetch("/api/registration/register", {
@@ -348,9 +354,16 @@ export function RegistrationForm() {
                 <Input
                   id="currentYear"
                   name="currentYear"
-                  placeholder="39th"
+                  type="number"
+                  placeholder="39"
                   value={formData.currentYear}
-                  onChange={handleInputChange}
+                  onChange={(e) => {
+                    // Only allow integer values
+                    const value = e.target.value;
+                    if (value === '' || /^[0-9]+$/.test(value)) {
+                      handleInputChange(e);
+                    }
+                  }}
                   className="h-11 bg-slate-800/60 border-slate-700 placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
                 />
               </div>
@@ -560,11 +573,100 @@ export function RegistrationForm() {
             </div>
           </div>
 
-          {/* Motivation */}
+          {/* Membership Information */}
           <div className="space-y-6">
             <div className="flex items-center gap-3 pb-2 border-b-2 border-blue-600">
               <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
                 5
+              </div>
+              <h3 className="text-xl font-bold text-white">Membership Information</h3>
+            </div>
+
+            <div className="flex items-center space-x-2 mb-4">
+              <input
+                type="checkbox"
+                id="secMembership"
+                checked={formData.secMembership}
+                onChange={(e) => 
+                  setFormData({
+                    ...formData,
+                    secMembership: e.target.checked,
+                    // Clear transaction fields if SEC membership is checked
+                    transactionId: e.target.checked ? "" : formData.transactionId,
+                    method: e.target.checked ? "" : formData.method,
+                  })
+                }
+                className="h-4 w-4 rounded border-slate-700 text-blue-600 focus:ring-blue-500"
+              />
+              <Label htmlFor="secMembership" className="text-slate-200 font-medium">
+                I am a SEC member
+              </Label>
+            </div>
+
+            {formData.secMembership ? (
+              <div className="space-y-2">
+                <Label htmlFor="secMembershipId" className="text-slate-200 font-medium">
+                  SEC Membership ID <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  id="secMembershipId"
+                  name="secMembership"
+                  placeholder="Enter your SEC membership ID"
+                  required={formData.secMembership}
+                  value={typeof formData.secMembership === 'string' ? formData.secMembership : ''}
+                  onChange={(e) => 
+                    setFormData({
+                      ...formData,
+                      secMembership: e.target.value,
+                    })
+                  }
+                  className="h-11 bg-slate-800/60 border-slate-700 placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="transactionId" className="text-slate-200 font-medium">
+                    Transaction ID <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="transactionId"
+                    name="transactionId"
+                    placeholder="Enter transaction ID"
+                    required={!formData.secMembership}
+                    value={formData.transactionId}
+                    onChange={handleInputChange}
+                    className="h-11 bg-slate-800/60 border-slate-700 placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="method" className="text-slate-200 font-medium">
+                    Payment Method <span className="text-red-500">*</span>
+                  </Label>
+                  <Select
+                    value={formData.method}
+                    onValueChange={(value) => handleSelectChange("method", value)}
+                    required={!formData.secMembership}
+                  >
+                    <SelectTrigger className="h-11 bg-slate-800/60 border-slate-700 text-slate-200 focus:border-blue-500">
+                      <SelectValue placeholder="Select payment method" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="bkash">bKash</SelectItem>
+                      <SelectItem value="nagad">Nagad</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Motivation */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 pb-2 border-b-2 border-blue-600">
+              <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                6
               </div>
               <h3 className="text-xl font-bold text-white">Tell Us More</h3>
             </div>
