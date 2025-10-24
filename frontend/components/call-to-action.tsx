@@ -39,10 +39,10 @@ export function CallToAction() {
           </a>
         </div>
         <div>
-          <p>
-            Developed with{" "}
-            <span className="text-red-500 text-xl">&#10084; </span>by Reshad &
-            Rafid
+          <p className="flex items-center justify-center">
+            Developed with
+            <span className="text-red-500 text-3xl">&nbsp;&#10084;&nbsp; </span>
+            by Reshad & Rafid
           </p>
         </div>
       </div>

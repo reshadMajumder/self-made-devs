@@ -140,34 +140,37 @@ export function Journey() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 px-4 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="py-12 sm:py-16 md:py-24 px-4 relative overflow-hidden"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-20 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10 backdrop-blur-sm mb-4">
-            <Sparkles className="w-4 h-4 text-yellow-400" />
-            <span className="text-sm font-semibold text-white">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 space-y-4 px-4">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10 backdrop-blur-sm mb-4">
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" />
+            <span className="text-xs sm:text-sm font-semibold text-white">
               Quest System
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-balance bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-balance bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Your Epic Journey
           </h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto text-balance">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto text-balance">
             Complete each quest to unlock the next level. Your transformation
             awaits.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-7xl mx-auto px-4">
           {/* Frontend Track */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-white text-center mb-8">
+          <div className="space-y-6 sm:space-y-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-white text-center mb-6 sm:mb-8">
               Frontend Development Track
             </h3>
             {frontQuests.map((quest, index) => {
@@ -457,10 +460,10 @@ export function Journey() {
         </div>
 
         {/* Achievement Section */}
-        <div className="text-center mt-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-yellow-500/20 to-amber-500/20 border border-yellow-500/30 backdrop-blur-sm">
-            <Trophy className="w-5 h-5 text-yellow-400" />
-            <span className="font-semibold text-yellow-400">
+        <div className="text-center mt-12 sm:mt-16 space-y-4 px-4">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-yellow-500/20 to-amber-500/20 border border-yellow-500/30 backdrop-blur-sm">
+            <Trophy className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400" />
+            <span className="text-sm sm:text-base font-semibold text-yellow-400 text-center sm:text-left">
               Complete All Quests to Become a Self Made Dev
             </span>
           </div>
