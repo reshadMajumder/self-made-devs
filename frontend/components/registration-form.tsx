@@ -625,7 +625,15 @@ export function RegistrationForm() {
               </div>
             ) : (
               <div className="grid md:grid-cols-2 gap-6">
+                
                 <div className="space-y-2">
+                  <div className="mb-4 p-4 bg-slate-800/80 rounded-lg border border-blue-500">
+                  <p className="text-slate-200 font-medium mb-2">Send money to:</p>
+                  <ul className="list-disc pl-5 text-slate-300 space-y-1">
+                    <li><span className="font-semibold text-blue-400">01611988305</span> - bKash</li>
+                    <li><span className="font-semibold text-blue-400">01303090993</span> - Nagad</li>
+                  </ul>
+                </div>
                   <Label htmlFor="transactionId" className="text-slate-200 font-medium">
                     Transaction ID <span className="text-red-500">*</span>
                   </Label>
