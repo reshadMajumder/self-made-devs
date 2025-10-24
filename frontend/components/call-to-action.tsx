@@ -13,7 +13,7 @@ export function CallToAction() {
           Join hundreds of students who are building their first
           production-ready projects and launching their tech careers.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
           <Link href="/register">
             <Button
               size="lg"
@@ -23,7 +23,7 @@ export function CallToAction() {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
-        </div>
+        </div> */}
         <p className="text-white/80 text-sm">
           Limited spots available. Applications close soon.
         </p>

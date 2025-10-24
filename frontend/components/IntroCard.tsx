@@ -79,7 +79,7 @@ export default function IntroCard() {
                 </div>
 
                 <div className="flex flex-col items-center gap-4    ">
-                  <div className="">
+                  <div className="scale-120">
                     {isClient && (
                       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-yellow-500/20 text-yellow-200 text-sm backdrop-blur-sm">
                         <CalendarClock className="w-4 h-4" />
@@ -98,7 +98,7 @@ export default function IntroCard() {
                       ${
                         expired
                           ? "bg-gray-600/80 text-gray-300 cursor-not-allowed"
-                          : "bg-gradient-to-r from-yellow-400/90 to-yellow-600/90 text-black hover:shadow-lg hover:shadow-yellow-500/20 transition-all"
+                          : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all duration-300 hover:scale-105"
                       }
                     `}
                   >

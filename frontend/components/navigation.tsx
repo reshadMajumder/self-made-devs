@@ -72,7 +72,12 @@ export default function Navigation() {
         <div className="flex flex-1 items-center justify-end gap-4">
           <ThemeToggle />
           <Button asChild>
-            <Link href="/register">Join Now</Link>
+            <Link
+              href="/register"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all duration-300 hover:scale-105 font-semibold text-white"
+            >
+              Join Now
+            </Link>
           </Button>
         </div>
       </nav>
