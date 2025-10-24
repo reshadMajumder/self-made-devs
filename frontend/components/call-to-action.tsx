@@ -38,6 +38,13 @@ export function CallToAction() {
             />
           </a>
         </div>
+        <div>
+          <p>
+            Developed with{" "}
+            <span className="text-red-500 text-xl">&#10084; </span>by Reshad &
+            Rafid
+          </p>
+        </div>
       </div>
     </section>
   );
