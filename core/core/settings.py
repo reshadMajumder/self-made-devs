@@ -160,6 +160,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://dev-wing.vercel.app",
-    "https://9000-firebase-glasswing-portalgit-1760616475232.cluster-44kx2eiocbhe2tyk3zoyo3ryuo.cloudworkstations.dev",
+    "http://localhost:8080",
+    
 
 ]
