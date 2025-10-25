@@ -157,7 +157,7 @@ export function Journey() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10 backdrop-blur-sm mb-4">
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" />
             <span className="text-xs sm:text-sm font-semibold text-white">
-              Quest System
+              Parallel Quest System
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -172,18 +172,18 @@ export function Journey() {
         {/* Quest Tracks */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-7xl mx-auto px-2 sm:px-4 place-items-center lg:place-items-stretch">
           <Track
-            title="Frontend Development Track"
+            title="Frontend Development Track - [Rookie]"
             quests={frontQuests}
             unlockedQuests={unlockedQuests}
             offset={0}
             lockMessage="Complete Previous Quest to Unlock"
           />
           <Track
-            title="Backend Development Track"
+            title="Backend Development Track - [Veteran]"
             quests={backQuests}
             unlockedQuests={unlockedQuests}
             offset={frontQuests.length}
-            lockMessage="Complete Frontend Track First"
+            lockMessage="Under Construction"
           />
         </div>
 
@@ -271,7 +271,7 @@ function Track({
               >
                 <div className="flex flex-col sm:flex-row gap-6">
                   {/* Icon & Level */}
-                  <div className="flex-shrink-0 self-center sm:self-auto">
+                  <div className="flex-shrink-0  sm:self-auto">
                     <div
                       className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br ${
                         quest.color
