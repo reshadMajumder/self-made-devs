@@ -42,7 +42,14 @@ export function CallToAction() {
           <p className="flex items-center justify-center">
             Developed with
             <span className="text-red-500 text-3xl">&nbsp;&#10084;&nbsp; </span>
-            by Reshad & Rafid
+            by&nbsp;{" "}
+            <a href="https://www.linkedin.com/in/jahidul-hassan-reshad-057513256/">
+              Reshad
+            </a>{" "}
+            &nbsp; & &nbsp;{" "}
+            <a href="https://www.linkedin.com/in/rafidul-islam-a2860b2a5/">
+              Rafid
+            </a>
           </p>
         </div>
       </div>
