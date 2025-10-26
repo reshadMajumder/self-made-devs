@@ -36,8 +36,7 @@ const frontQuests = [
     month: "Month 3",
     title: "Junior",
     subtitle: "The Transformation",
-    description:
-      "Conquer backend development and become a full-stack developer.",
+    description: "Build faster UI by implementing a framework.",
     skills: ["React", "State Managements", "React Hooks", "REST APIs"],
     xp: "5000 XP",
     color: "from-orange-500 to-red-500",
