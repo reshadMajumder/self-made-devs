@@ -43,11 +43,17 @@ export function CallToAction() {
             Developed with
             <span className="text-red-500 text-3xl">&nbsp;&#10084;&nbsp; </span>
             by&nbsp;{" "}
-            <a href="https://www.linkedin.com/in/jahidul-hassan-reshad-057513256/">
+            <a
+              className="underline"
+              href="https://www.linkedin.com/in/jahidul-hassan-reshad-057513256/"
+            >
               Reshad
             </a>{" "}
             &nbsp; & &nbsp;{" "}
-            <a href="https://www.linkedin.com/in/rafidul-islam-a2860b2a5/">
+            <a
+              className="underline"
+              href="https://www.linkedin.com/in/rafidul-islam-a2860b2a5/"
+            >
               Rafid
             </a>
           </p>
