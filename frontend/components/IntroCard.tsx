@@ -26,7 +26,7 @@ function getTimeLeft(targetTime: number) {
 
 export default function IntroCard() {
   // Target: 6 November 2025 23:59:59 UTC
-  const target = new Date(2025, 10, 10, 23, 59, 59).getTime();
+  const target = new Date(2025, 10, 12, 23, 59, 59).getTime();
   const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
   const [isClient, setIsClient] = useState(false);
 

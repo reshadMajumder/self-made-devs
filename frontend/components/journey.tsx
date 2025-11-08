@@ -169,7 +169,7 @@ export function Journey() {
         </div>
 
         {/* Quest Tracks */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-7xl mx-auto px-2 sm:px-4 place-items-center lg:place-items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-6 max-w-7xl mx-auto px-2 sm:px-4 place-items-center lg:place-items-stretch">
           <Track
             title="Frontend Development Track - [Rookie]"
             quests={frontQuests}
