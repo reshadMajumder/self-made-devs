@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRightFromLine } from "lucide-react";
+import "../styles/globals.css";
 
 export function Hero() {
   return (
@@ -11,7 +12,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
           <h1>DIUSEC - Design & Development Wing Presents -</h1>
           <h1 className="text-5xl md:text-7xl font-bold text-balance">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
+            <span className="font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl press-start-2p-regular">
               Self Made Dev
             </span>
           </h1>
