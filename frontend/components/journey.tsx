@@ -61,14 +61,10 @@ const backQuests = [
     level: 5,
     month: "Month 1",
     title: "Fresher",
-    subtitle: "The Beginning",
-    description: "Master the fundamentals and unlock your developer potential.",
-    skills: [
-      "HTML & CSS",
-      "CLI + Git & GitHub",
-      "TailwindCSS",
-      "Portfolio Project",
-    ],
+    subtitle: "Core Systems",
+    description:
+      "Learn the fundamentals that shape backend logic and architecture..",
+    skills: ["Node Js", "CLI + Git & GitHub", "OOP", "Basic DSA"],
     xp: "1000 XP",
     color: "from-blue-500 to-cyan-500",
     icon: "🎯",
@@ -77,9 +73,10 @@ const backQuests = [
     level: 6,
     month: "Month 2",
     title: "Sophomore",
-    subtitle: "The Ascension",
-    description: "Build interactive UIs and level up your frontend skills.",
-    skills: ["JavaScript(ES6+)", "API Integration", "DOM Manipulation"],
+    subtitle: "The Engineer",
+    description:
+      "Build structured backend components and solve real data problems",
+    skills: ["Framework", "Routing", "Database", "Postman"],
     xp: "2500 XP",
     color: "from-purple-500 to-pink-500",
     icon: "⚡",
@@ -88,10 +85,10 @@ const backQuests = [
     level: 7,
     month: "Month 3",
     title: "Junior",
-    subtitle: "The Transformation",
+    subtitle: "The Constructor",
     description:
-      "Conquer backend development and become a full-stack developer.",
-    skills: ["React", "State Managements", "React Hooks", "REST APIs"],
+      "Create solid backend modules and craft reliable, data-driven features.",
+    skills: ["ORM Project", "Relational CRUD", "Mini Project"],
     xp: "5000 XP",
     color: "from-orange-500 to-red-500",
     icon: "🔥",
@@ -100,10 +97,10 @@ const backQuests = [
     level: 8,
     month: "Month 4",
     title: "Senior",
-    subtitle: "The Victory",
+    subtitle: "The Mastery Stage",
     description:
-      "Deploy your masterpiece and join the ranks of production developers.",
-    skills: ["Deployment", "Testing", "CI/CD", "Explore Libraries"],
+      "Optimize, secure, and deploy robust backend systems like a pro.",
+    skills: ["Query Optimization", "Deployment", "Debugging", "Final Project"],
     xp: "10000 XP",
     color: "from-yellow-500 to-amber-500",
     icon: "👑",
@@ -225,16 +222,16 @@ function Track({
    const isLocked = !isUnlocked;
   */
         // Lock backend track cards individually (frontend unlocked, backend locked)
-        const trackLocked = title.toLowerCase().includes("backend");
-        const isUnlocked = !trackLocked;
-        const isLocked = trackLocked;
+        // const trackLocked = title.toLowerCase().includes("backend");
+        const isUnlocked = true;
+        const isLocked = false;
 
         return (
           <div
             key={index}
-            className={`relative transition-all duration-700 ${
+            className={`relative transition-all duration-700  ${
               isUnlocked
-                ? "opacity-100 translate-x-0"
+                ? "opacity-100 translate-x-0 "
                 : "opacity-70 translate-x-4"
             }`}
           >
