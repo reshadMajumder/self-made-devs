@@ -91,7 +91,7 @@ export default function IntroCard() {
                       </div>
                     )}
                   </div>
-                  <Link
+                  {/* <Link
                     href="/register"
                     className={`
                       px-6 py-3 rounded-lg font-semibold text-base backdrop-blur-md
@@ -103,7 +103,7 @@ export default function IntroCard() {
                     `}
                   >
                     {expired ? "Enrollment Closed" : "Enroll Now"}
-                  </Link>
+                  </Link> */}
 
                   {/* <Link
                     href="/program"
