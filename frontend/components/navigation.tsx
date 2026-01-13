@@ -12,13 +12,21 @@ const navItems = [
     path: "/",
     label: "Home",
   },
-  // {
-  //   path: "/program",
-  //   label: "Program",
-  // },
   {
     path: "/register",
     label: "Register",
+  },
+  {
+    path: "/modules",
+    label: "Weekly Modules",
+  },
+  {
+    path: "/leader-board",
+    label: "Leader Board",
+  },
+  {
+    path: "/exam",
+    label: "Exam",
   },
 ];
 
