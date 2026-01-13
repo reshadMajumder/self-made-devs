@@ -18,15 +18,15 @@ const navItems = [
   },
   {
     path: "/modules",
-    label: "Weekly Modules",
-  },
-  {
-    path: "/leader-board",
-    label: "Leader Board",
+    label: "Modules",
   },
   {
     path: "/exam",
     label: "Exam",
+  },
+  {
+    path: "/leader-board",
+    label: "LeaderBoard",
   },
 ];
 
