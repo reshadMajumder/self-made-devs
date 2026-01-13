@@ -11,11 +11,11 @@ class RegistrationAdmin(admin.ModelAdmin):
     # Fields to search
     search_fields = ('email', 'phone', 'full_name', 'student_id')
     
-    # Add actions
+    # Add actionszz
     actions = ['export_as_csv']
 
     def export_as_csv(self, request, queryset):
-        """Export selected registrations as CSV"""
+        """Export selected registrations as CSV"""  
         meta = self.model._meta
         field_names = [field.name for field in meta.fields]
 
