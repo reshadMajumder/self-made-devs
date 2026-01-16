@@ -43,7 +43,7 @@ export default function ModulesPage() {
                 <th className="px-4 py-3">Topic</th>
                 <th className="px-4 py-3">Resource</th>
                 <th className="px-4 py-3">Task</th>
-                <th className="px-4 py-3">Quiz</th>
+                {/* <th className="px-4 py-3">Quiz</th> */}
               </tr>
             </thead>
             <tbody>
@@ -60,22 +60,32 @@ export default function ModulesPage() {
                       href={m.resource}
                       target="_blank"
                       rel="noreferrer"
+                      className="text-blue-400 hover:underline mr-4"
+                    >
+                      Docs
+                    </a>
+
+                    <a
+                      href={m.resource}
+                      target="_blank"
+                      rel="noreferrer"
                       className="text-blue-400 hover:underline"
                     >
-                      Link
+                      Lecture
                     </a>
                   </td>
                   <td className="px-4 py-3 align-top text-slate-200">
                     {m.task}
                   </td>
-                  <td className="px-4 py-3 align-top">
+                  {/* <td className="px-4 py-3 align-top">
                     <Link
                       href={m.quiz}
                       className="text-indigo-400 hover:underline"
+                      aria-disabled
                     >
                       Quiz
                     </Link>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>
