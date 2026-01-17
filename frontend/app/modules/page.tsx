@@ -1,27 +1,24 @@
+import { lightFormat } from "date-fns";
 import Link from "next/link";
 
 export default function ModulesPage() {
   const modules = [
     {
-      date: "2026-01-19",
-      topic: "Intro to JavaScript",
-      resource: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-      task: "Complete JS fundamentals exercises",
+      week: 1,
+      date: "19/01/2026",
+      deadline: "23/01/2026",
+      topic: "SDLC",
+      resource: [
+        "https://www.perforce.com/blog/alm/how-write-software-requirements-specification-srs-document",
+      ],
+      tasks: [
+        "Generate a Project Idea",
+        "Gather project requirements",
+        "Create a Proper SRS doc",
+        "Briefly Describe your project impact",
+        "Submit the SRS doc in the Discord",
+      ],
       quiz: "/exam?module=intro-to-javascript",
-    },
-    {
-      date: "2026-01-26",
-      topic: "React Basics",
-      resource: "https://react.dev/learn",
-      task: "Build a small todo app",
-      quiz: "/exam?module=react-basics",
-    },
-    {
-      date: "2026-02-02",
-      topic: "Next.js App Router",
-      resource: "https://nextjs.org/docs/app",
-      task: "Create a multi-page Next app",
-      quiz: "/exam?module=nextjs-app-router",
     },
   ];
 
@@ -40,9 +37,10 @@ export default function ModulesPage() {
             <thead>
               <tr className="bg-slate-800 text-slate-100">
                 <th className="px-4 py-3">Date</th>
+                <th className="px-4 py-3">Deadline</th>
                 <th className="px-4 py-3">Topic</th>
-                <th className="px-4 py-3">Resource</th>
                 <th className="px-4 py-3">Task</th>
+                <th className="px-4 py-3">Resource</th>
                 {/* <th className="px-4 py-3">Quiz</th> */}
               </tr>
             </thead>
@@ -53,10 +51,32 @@ export default function ModulesPage() {
                     {m.date}
                   </td>
                   <td className="px-4 py-3 align-top text-slate-200">
+                    {m.deadline}
+                  </td>
+
+                  <td className="px-4 py-3 align-top text-slate-200">
                     {m.topic}
                   </td>
+
+                  <td className="px-4 py-3 align-top text-slate-200 w-84">
+                    {m.tasks.map((task) => (
+                      <li className="" key={task}>
+                        {task}
+                      </li>
+                    ))}
+                  </td>
+
                   <td className="px-4 py-3 align-top">
-                    <a
+                    {m.resource.map((r) => (
+                      <a
+                        target="_blank"
+                        className="block text-blue-800 underline"
+                        href={r}
+                      >
+                        Link
+                      </a>
+                    ))}
+                    {/* <a
                       href={m.resource}
                       target="_blank"
                       rel="noreferrer"
@@ -72,11 +92,9 @@ export default function ModulesPage() {
                       className="text-blue-400 hover:underline"
                     >
                       Lecture
-                    </a>
+                    </a> */}
                   </td>
-                  <td className="px-4 py-3 align-top text-slate-200">
-                    {m.task}
-                  </td>
+
                   {/* <td className="px-4 py-3 align-top">
                     <Link
                       href={m.quiz}
