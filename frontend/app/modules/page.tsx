@@ -4,6 +4,22 @@ import Link from "next/link";
 export default function ModulesPage() {
   const modules = [
     {
+      week: 2,
+      date: "30/01/2026",
+      deadline: "06/02/2026",
+      topic: "HTML + SRS",
+      resource: [
+        "https://www.w3schools.com/html/default.asp",
+        "https://youtu.be/HcOc7P5BMi4?si=Q-zypcF3tRArJFJO",
+        "https://youtu.be/HD13eq_Pmp8?si=rpP7SvYOUBWSOgfM",
+      ],
+      tasks: [
+        "Make the SRS Doc with Proper Diagram",
+        "Learn and practice major HTML Tags",
+      ],
+      quiz: "/exam?module=intro-to-javascript",
+    },
+    {
       week: 1,
       date: "19/01/2026",
       deadline: "23/01/2026",
@@ -69,6 +85,7 @@ export default function ModulesPage() {
                   <td className="px-4 py-3 align-top">
                     {m.resource.map((r) => (
                       <a
+                        key={r}
                         target="_blank"
                         className="block text-blue-800 underline"
                         href={r}
