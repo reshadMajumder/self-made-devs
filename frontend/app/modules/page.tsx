@@ -5,6 +5,18 @@ export default function ModulesPage() {
   const modules = [
     {
       week: 2,
+      date: "07/02/2026",
+      deadline: "13/02/2026",
+      topic: "JavaScript",
+      resource: [
+        "https://www.w3schools.com/js/default.asp",
+        "https://www.youtube.com/playlist?list=PLGjplNEQ1it_oTvuLRNqXfz_v_0pq6unW",
+      ],
+      tasks: ["Learn Javascript Basics"],
+      quiz: "/exam?module=intro-to-javascript",
+    },
+    {
+      week: 2,
       date: "30/01/2026",
       deadline: "06/02/2026",
       topic: "HTML + SRS",
